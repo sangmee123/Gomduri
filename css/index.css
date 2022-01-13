@@ -1,0 +1,13 @@
+a { text-decoration: none; }
+
+.start {
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+    width: 200px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(250, 156, 49);
+    border-radius: 30px;
+}
