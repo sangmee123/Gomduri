@@ -1,0 +1,36 @@
+#sticker {
+    display: block;
+    margin: 0 auto;
+}
+
+.question {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.question .title {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.list li {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    width: 93.3%; 
+    padding: 18px 22px 18px 22px;
+    border-radius: 30px;
+    background-color: rgb(245, 245, 244);
+    cursor: pointer;
+}
+
+.list li:hover {
+    background-color: rgb(155, 198, 238);
+}
+
+.a_hide { visibility: hidden; }
