@@ -1,0 +1,52 @@
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+}
+
+#img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    border: 0;
+}
+
+element.style {
+    width: 50%;
+}
+
+.result-btns {
+    text-align: center;
+}
+
+.result-btns img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.result-btns img.half {
+    display: inline;
+    margin-right: -2px;
+    vertical-align: middle;
+}
+
+.content-body {
+    background-image: url(../images/background.png);
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    padding: 0 22px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: left;
+}
