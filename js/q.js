@@ -90,12 +90,15 @@ function clickButton(e) {
     first.innerHTML = a[num]["A"];
     second.innerHTML = a[num]["B"];
     
-    //프로 집콕러 선택지
+    
     if(e.target.id === "A" && (num <= 2 || num === 5 || num === 14)) {
+        //프로 집콕러 선택지
         document.querySelector('#homebody').value++;
     } else if(e.target.id === "B" && ((num >= 6 && num <= 8) || num === 10 || num === 14)) {
+        //인간 골든 리트리버 선택지
         document.querySelector('#golden').value++;
     } else if(e.target.id === "A" && ((num >= 9 && num <= 11) || num === 13)) {
+        //지휘자 곰두리 선택지
         document.querySelector('#conductor').value++;
     }
 
