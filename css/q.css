@@ -46,6 +46,7 @@
 .progress {
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 50px;
 } 
 .progress-bar {
     background-color: rgb(52, 109, 214);
