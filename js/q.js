@@ -79,7 +79,8 @@ second.addEventListener('click', clickButton);
 third.addEventListener('click', clickButton);
 
 let num = 1;
-let shift = 12;
+let shift = 12; //곰두리 게이지 초기 위치
+
 const quertionTitle = document.querySelector('.title');
 const progressBar = document.querySelector('.progress-bar');
 const progressGom = document.querySelector('.progressGom');
@@ -160,3 +161,4 @@ function clickButton(e) {
             break;
     }     
 }
+
