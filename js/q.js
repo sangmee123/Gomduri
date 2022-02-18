@@ -109,11 +109,17 @@ function clickButton(e) {
     } else {
         third.classList.add('a_hide');
     }
-    
+
     //진행바
     progressGom.style.marginLeft = shift + "px";
     progressBar.setAttribute('style', 'width: calc(100/15*' + num + '%)');
     num++;
+
+    //마지막 질문 선택 시
+    if(num === 16) {
+        first.addEventListener('click', resultPage);
+        second.addEventListener('click', resultPage);
+    }
 
     //진행바: 곰두리 이동
     switch(num) {
@@ -161,4 +167,17 @@ function clickButton(e) {
             break;
     }     
 }
+
+//테스트 결과 페이지 이동
+function resultPage() {
+    const loading_hide = document.querySelector('.loading_hide');
+    loading_hide.classList.add('hide');
+    const body = document.querySelector('body');
+    body.classList.add('loading');
+
+    setTimeout(function() {
+        window.open("../result.html", "_self");
+    }, 2000);
+}
+
 

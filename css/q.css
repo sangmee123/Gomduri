@@ -1,3 +1,20 @@
+.navbar-brand {
+    margin-left: 10px;
+    font-size: 17px;
+}
+
+.navbar-nav {
+    margin-left: 10px;
+}
+
+.loading {
+    background-color:cornflowerblue;
+}
+
+.hide {
+    display: none;
+}
+
 #sticker {
     display: block;
     margin: 0 auto;
@@ -41,7 +58,9 @@
     margin: 0 auto;
 }
 
-.progressGom { transform: scaleX(-1); }
+.progressGom { 
+    transform: scaleX(-1); 
+}
 
 .progress {
     width: 90%;
@@ -50,4 +69,10 @@
 } 
 .progress-bar {
     background-color: rgb(52, 109, 214);
+}
+
+@media (max-width: 768px) {
+    .progressGom {
+        display: none;
+    }
 }
