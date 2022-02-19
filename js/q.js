@@ -85,11 +85,37 @@ const quertionTitle = document.querySelector('.title');
 const progressBar = document.querySelector('.progress-bar');
 const progressGom = document.querySelector('.progressGom');
 
+const list = document.querySelector('.list li');
+
 //선택지를 클릭 시 다음 질문으로 넘어가게 하는 function
 function clickButton(e) {
     quertionTitle.innerHTML = q[num]["title"];
     first.innerHTML = a[num]["A"];
     second.innerHTML = a[num]["B"];
+
+
+    //선택지 클릭 시 background-color(orange) effect
+    if(e.target.id === "A") {   
+        first.setAttribute('style', 'background-color: rgb(248, 186, 70);');
+        
+        setTimeout(function() { 
+            first.setAttribute('style', 'background-color: rgb(245, 245, 244);');
+        }, 250);
+    }
+    else if(e.target.id === "B") {
+        second.setAttribute('style', 'background-color: rgb(248, 186, 70);');
+        
+        setTimeout(function() {    
+            second.setAttribute('style', 'background-color: rgb(245, 245, 244);');   
+        }, 250);  
+    }
+    else if(e.target.id === "C") {
+        third.setAttribute('style', 'background-color: rgb(248, 186, 70);');
+        
+        setTimeout(function() {
+            third.setAttribute('style', 'background-color: rgb(245, 245, 244);');  
+        }, 250); 
+    }   
 
     if(e.target.id === "A" && (num <= 2 || num === 5 || num === 14)) {
         //프로 집콕러 선택지
