@@ -90,7 +90,7 @@ function clickButton(e) {
     quertionTitle.innerHTML = q[num]["title"];
     first.innerHTML = a[num]["A"];
     second.innerHTML = a[num]["B"];
-    
+
     if(e.target.id === "A" && (num <= 2 || num === 5 || num === 14)) {
         //프로 집콕러 선택지
         document.querySelector('#homebody').value++;
