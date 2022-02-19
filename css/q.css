@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-.list li:hover {
+.list li:active {
     background-color: rgb(248, 186, 70);
 }
 
