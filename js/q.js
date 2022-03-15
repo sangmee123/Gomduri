@@ -126,7 +126,7 @@ function clickButton(e) {
     } else if(e.target.id === "A" && ((num >= 9 && num <= 11) || num === 13)) {
         //지휘자 곰두리 선택지
         document.querySelector('#conductor').value++;
-    }
+    } else if(e.target.id === "B" && )
 
     //선택지 3개일 때
     if(num === 1 || num === 3) { 
