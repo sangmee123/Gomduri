@@ -1,1 +1,12 @@
-//메인 홈 제이쿼리 사용시 여기에다 작성해주세요(확인 후 삭제 바람)
+jQuery(function($) {
+    $("body").css("display", "none");
+    $("body").fadeIn(1000);
+    $(".next").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $("body").fadeOut(500, redirectPage);
+    });
+    function redirectPage() {
+    window.location = linkLocation;
+    }
+});
