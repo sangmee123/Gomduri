@@ -13,6 +13,14 @@ a { text-decoration: none; }
     text-align: center;
 }
 
+h1{
+    font-family: "JUA";
+    font-size: 50px;
+    font-weight: 400;
+    color:#92B3B7;
+    padding: 50px
+}
+
 .start {
     display: block;
     margin: 0 auto;
