@@ -1,0 +1,17 @@
+a { text-decoration: none; }
+
+.navbar-brand {
+    margin-left: 10px;
+    font-size: 17px;
+}
+
+.navbar-nav {
+    margin-left: 10px;
+}
+
+#img {
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+    border: 0;
+}

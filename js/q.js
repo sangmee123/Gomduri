@@ -17,7 +17,7 @@ const q = {
 };
 const a = {
     1: { "A": "집이 최고야!", //프로 집콕러 곰두리
-         "B": "*카공을 해야지.", 
+         "B": "카공을 해야지.", 
          "C": "곰두리생은 강대 도서관에 가야지!" 
         },
     2: { "A": "곰두리는 가성비 학식이다.", 
@@ -46,10 +46,10 @@ const a = {
          "B": "저희 끝나고 저녁 같이 드실래요? 뒷풀이 해요! 이미 친해져있다.", //인간 골든 리트리버 곰두리
          "C": "효율을 추구하며 딴길로 새는 사담은 참을 수 없다." 
         },
-    10: { "A": "*에타에서 식단 정보를 살펴본 후 가장 맛있는 곳으로 간다.", //지휘자 곰두리
+    10: { "A": "에타에서 식단 정보를 살펴본 후 가장 맛있는 곳으로 간다.", //지휘자 곰두리
           "B": "가까운 곳에 일단 도착해서 그날 끌리는 메뉴를 선택한다." //제우스 마냥 벼락치는 곰두리
         },
-    11: { "A": "이미 미리 해두고 꿀잠자고 있음.", 
+    11: { "A": "이미 미리 해두고 꿀잠자고 있음.",  
           "B": "될 때까지 밤새 새로고침 해본다." //제우스 마냥 벼락치는 곰두리
         },
     12: { "A": "방학 기간별 목표를 설정해두고 진행상황을 체크한다.", //지휘자 곰두리
@@ -58,11 +58,11 @@ const a = {
     13: { "A": "그게 뭐야? 혼자 집에서 취미생활하는 게 더 재밌다.", //프로 집콕러 곰두리
           "B": "뭔진 모르겠지만 같이하자며 단톡방에 올린다." //인간 골든 리트리버 곰두리
         },
-    14: { "A": "무슨 일이야.. 왜 우울해?ㅠㅠ",
-          "B": "오 머리 함? 색깔 잘 나옴? 사진 보여줘"
-        },
-    15: { "A": "알람 울리자마자 화장실로 직행해서 세수하며 정신을 차린다.",
+    14: { "A": "알람 울리자마자 화장실로 직행해서 세수하며 정신을 차린다.",
           "B": "기상도 한번에 하지 않음. 5분 간격으로 알람을 끈다." //제우스 마냥 벼락치는 곰두리
+        },
+    15: { "A": "무슨 일이야.. 왜 우울해?ㅠㅠ",
+          "B": "오 머리 함? 색깔 잘 나옴? 사진 보여줘"
         }
 }
 
@@ -93,7 +93,6 @@ function clickButton(e) {
     first.innerHTML = a[num]["A"];
     second.innerHTML = a[num]["B"];
 
-
     //선택지 클릭 시 background-color(orange) effect
     if(e.target.id === "A") {   
         first.setAttribute('style', 'background-color: rgb(248, 186, 70);');
@@ -117,7 +116,7 @@ function clickButton(e) {
         }, 250); 
     }   
 
-    if(e.target.id === "A" && (num <= 2 || num === 5 || num === 14)) {
+    if(e.target.id === "A" && (num <= 2 || num === 5 || num == 8 || num === 14)) {
         //프로 집콕러 선택지
         document.querySelector('#homebody').value++;
     } else if(e.target.id === "B" && ((num >= 6 && num <= 8) || num === 10 || num === 14)) {
@@ -126,6 +125,9 @@ function clickButton(e) {
     } else if(e.target.id === "A" && ((num >= 9 && num <= 11) || num === 13)) {
         //지휘자 곰두리 선택지
         document.querySelector('#conductor').value++;
+    } else if(e.target.id === "B" && (num === 9) || (num >= 11 && num <= 13) ||(num == 15)) {
+        //제우스 마냥 벼락치는 곰두리 선택지
+        document.querySelector('#zeus').value++;
     }
 
     //선택지 3개일 때
@@ -200,10 +202,42 @@ function resultPage() {
     loading_hide.classList.add('hide');
     const body = document.querySelector('body');
     body.classList.add('loading');
+    
+    let homebody = document.querySelector('#homebody');
+    let golden = document.querySelector('#golden');
+    let zeus = document.querySelector('#zeus');
+    let conductor = document.querySelector('#conductor');
 
-    setTimeout(function() {
-        window.open("../result.html", "_self");
-    }, 2000);
+    //프로 집콕러 곰두리
+    if(homebody.value == 5) {
+        setTimeout(function() {
+            window.open("characters/homebody.html", "_self");
+        }, 2000); 
+    }
+    //인간 골든 리트리버 곰두리
+    else if(golden.value == 5) {
+        setTimeout(function() {
+            window.open("characters/golden.html", "_self");
+        }, 2000);
+    }
+    //제우스 마냥 벼락치는 곰두리
+    else if(zeus.value == 5 && golden.value ==! 5) {
+        setTimeout(function() {
+            window.open("characters/zeus.html", "_self");
+        }, 2000);
+    }
+    //즉흥발랄 곰두리 
+    else if(golden.value == 5 && zeus.value == 5) {
+        setTimeout(function() {
+            window.open("characters/vividity.html", "_self");
+        }, 2000);
+    }
+    //지휘자 곰두리
+    else if(conductor.value == 4) {
+        setTimeout(function() {
+            window.open("characters/conductor.html", "_self");
+        }, 2000);   
+    } 
 }
 
 
