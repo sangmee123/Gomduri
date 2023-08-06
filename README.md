@@ -9,9 +9,9 @@
 성격 테스트로 유명해진 MBTI 테스트는 본인의 성격을 지표하는 게 되었습니다.<br>
 이를 바탕으로 **대학교 마스코트인 곰두리 캐릭터**를 가지고 재미있게 테스트 해보고 싶은 생각이 들어 개발하게 되었습니다.<br>
 
-<img width="200" src="https://github.com/sangmee123/Gomduri/assets/69633033/accc91cc-0043-424d-b0d1-9ded2f2e4d94">
-
 <br>
+
+<p align="center"><img width="200" src="https://github.com/sangmee123/Gomduri/assets/69633033/accc91cc-0043-424d-b0d1-9ded2f2e4d94"></p>
 
 ## 🔗 링크 
 https://gomduri-personality-test.netlify.app
