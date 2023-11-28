@@ -9,35 +9,35 @@ const q = {
     8: { "title": "내가 팀플에서 가장 중요하게 생각하는 것은?" },
     9: { "title": "조별 과제를 하는 내 모습에 가장 가까운 것은?" },
     10: { "title": "강원대 학식을 먹으러 가는 곰두리의 모습은?" },
-    11: { "title": "아직 과제가 남았는데 서버 접속이 안 된다...!", },
-    12: { "title": "방학을 맞아 계획을 세웠다! 나의 모습은?", },
-    13: { "title": "드론 또는 무드등 만들기 프로그램 신청을 봤다.", },
-    14: { "title": "친구가 우울해서 미용실을 갔다고 한다.", },
-    15: { "title": "1교시인 나의 모습은?", }
+    11: { "title": "아직 과제가 남았는데 서버 접속이 안 된다...!" },
+    12: { "title": "방학을 맞아 계획을 세웠다! 나의 모습은?" },
+    13: { "title": "드론 또는 무드등 만들기 프로그램 신청을 봤다." },
+    14: { "title": "1교시인 나의 모습은?" },
+    15: { "title": "친구가 우울해서 미용실을 갔다고 한다." }
 };
 const a = {
     1: { "A": "집이 최고야!", //프로 집콕러 곰두리
          "B": "카공을 해야지.", 
          "C": "곰두리생은 강대 도서관에 가야지!" 
         },
-    2: { "A": "곰두리는 가성비 학식이다.", 
+    2: { "A": "곰두리는 가성비 학식이다.", //지휘자 곰두리
          "B": "학식도 질려 외부에서 먹을 거야." 
         },
     3: { "A": "창가 자리에 앉는다.", 
-         "B": "사방이 트인 곳에 앉는다.", 
+         "B": "사방이 트인 곳에 앉는다.", //인간 골든 리트리버 곰두리
          "C": "구석진 곳에 앉는다." 
         },
     4: { "A": "잠은 무조건 집에서 자야된다.", //프로 집콕러 곰두리
          "B": "도서관, 카페 어디서든 잘 수 있다." 
         },
-    5: { "A": "별로 가고 싶지 않다.",
+    5: { "A": "별로 가고 싶지 않다.", //프로 집콕러 곰두리
          "B": "종종 참여해 선후배들과 가까워지고 싶다." //인간 골든 리트리버 곰두리 
         },
     6: { "A": "조용하고 한적한 연못", 
          "B": "광장 같이 사람들 지나다니는 곳." //인간 골든 리트리버 곰두리
         },
     7: { "A": "밀린 잠을 자러 간다", //프로 집콕러 곰두리 
-         "B": "강대 후문에서 술자리 약속" //인간 골든 리트리버 곰두리
+         "B": "강대 후문에서 술자리 약속" //인간 골든 리트리버 곰두리, 
         },
     8: { "A": "꼼꼼한 계획 수립 및 이행", //지휘자 곰두리
          "B": "임기응변과 적응하는 능력" //제우스 마냥 벼락치는 곰두리
@@ -49,7 +49,7 @@ const a = {
     10: { "A": "에타에서 식단 정보를 살펴본 후 가장 맛있는 곳으로 간다.", //지휘자 곰두리
           "B": "가까운 곳에 일단 도착해서 그날 끌리는 메뉴를 선택한다." //제우스 마냥 벼락치는 곰두리
         },
-    11: { "A": "이미 미리 해두고 꿀잠자고 있음.",  
+    11: { "A": "이미 미리 해두고 꿀잠자고 있음.", //지휘자 곰두리
           "B": "될 때까지 밤새 새로고침 해본다." //제우스 마냥 벼락치는 곰두리
         },
     12: { "A": "방학 기간별 목표를 설정해두고 진행상황을 체크한다.", //지휘자 곰두리
@@ -58,7 +58,7 @@ const a = {
     13: { "A": "그게 뭐야? 혼자 집에서 취미생활하는 게 더 재밌다.", //프로 집콕러 곰두리
           "B": "뭔진 모르겠지만 같이하자며 단톡방에 올린다." //인간 골든 리트리버 곰두리
         },
-    14: { "A": "알람 울리자마자 화장실로 직행해서 세수하며 정신을 차린다.",
+    14: { "A": "알람 울리자마자 화장실로 직행해서 세수하며 정신을 차린다.", //지휘자 곰두리
           "B": "기상도 한번에 하지 않음. 5분 간격으로 알람을 끈다." //제우스 마냥 벼락치는 곰두리
         },
     15: { "A": "무슨 일이야.. 왜 우울해?ㅠㅠ",
@@ -116,13 +116,13 @@ function clickButton(e) {
         }, 250); 
     }   
 
-    if(e.target.id === "A" && (num <= 2 || num === 5 || num == 8 || num === 14)) {
+    if(e.target.id === "A" && (num <= 2 || num === 5 || num === 6 || num == 8 || num === 14)) {
         //프로 집콕러 선택지
         document.querySelector('#homebody').value++;
-    } else if(e.target.id === "B" && ((num >= 6 && num <= 8) || num === 10 || num === 14)) {
+    } else if(e.target.id === "B" && (num === 4 || (num >= 6 && num <= 8) || num === 10 || num === 14)) {
         //인간 골든 리트리버 선택지
         document.querySelector('#golden').value++;
-    } else if(e.target.id === "A" && ((num >= 9 && num <= 11) || num === 13)) {
+    } else if(e.target.id === "A" && (num === 3 || (num >= 9 && num <= 13) || num === 15)) {
         //지휘자 곰두리 선택지
         document.querySelector('#conductor').value++;
     } else if(e.target.id === "B" && (num === 9) || (num >= 11 && num <= 13) ||(num == 15)) {
@@ -209,31 +209,31 @@ function resultPage() {
     let conductor = document.querySelector('#conductor');
 
     //프로 집콕러 곰두리
-    if(homebody.value == 5) {
+    if(homebody.value === 6) {
         setTimeout(function() {
             window.open("characters/homebody.html", "_self");
         }, 2000); 
     }
     //인간 골든 리트리버 곰두리
-    else if(golden.value == 5) {
+    else if(golden.value == 6 && (golden.value > zeus.value)) {
         setTimeout(function() {
             window.open("characters/golden.html", "_self");
         }, 2000);
     }
     //제우스 마냥 벼락치는 곰두리
-    else if(zeus.value == 5 && golden.value ==! 5) {
+    else if(zeus.value === 5 && (zeus.value > golden.value)) {
         setTimeout(function() {
             window.open("characters/zeus.html", "_self");
         }, 2000);
     }
     //즉흥발랄 곰두리 
-    else if(golden.value == 5 && zeus.value == 5) {
+    else if(golden.value !== 0 && (golden.value === zeus.value)) {
         setTimeout(function() {
             window.open("characters/vividity.html", "_self");
         }, 2000);
     }
     //지휘자 곰두리
-    else if(conductor.value == 4) {
+    else if(conductor.value >= 6) {
         setTimeout(function() {
             window.open("characters/conductor.html", "_self");
         }, 2000);   
